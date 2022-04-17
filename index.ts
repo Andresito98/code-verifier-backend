@@ -1,52 +1,52 @@
-import express, { Express, Request, Response } from 'express'
 import dotenv from 'dotenv'
+import server from './src/server'
+import { LogError, LogSuccess } from './src/utils/logger'
 
-// Configuration the .env file
+// * Configuration the .env file
 dotenv.config()
 
-// Create Express APP
-const app: Express = express()
-const port: string | number = process.env.PORT || 8000
+const port = process.env.PORT || 8000
 
-// Define the first Route of APP
-app.get('/', (req:Request, res:Response) => {
-  // Send Hello World
-  res.send('Welcome to API Restfull: APP Express + Nodemon + Jest + TS + Swagger + Mongoose')
+// * Execute SERVER
+server.listen(port, () => {
+  LogSuccess(`[SERVER ON]: Running in http://localhost:${port}/api`)
 })
 
-app.get('/hello', (req:Request, res:Response) => {
-  // Send Hello World
-  res.send('Welcome to GET Route: !Helloo2qwrfqwtfgqwtfg')
+// * Control SERVER ERROR
+server.on('error', (error) => {
+  LogError(`[SERVER ERROR]: ${error}`)
 })
 
-// Execute APP and Listen Requests to PORT
-app.listen(port, () => {
-  console.log(`EXPRESS SERVER: Running at http://localhost:${port}`)
-})
+// import express, { Express, Request, Response } from 'express'
+// import dotenv from 'dotenv'
 
-app.get('/prueba1', (req:Request, res:Response) => {
-  res.send({ message: 'Goodbye, world' })
-})
+// // Configuration the .env file
+// dotenv.config()
 
-app.get('/prueba2/:name', (req:Request, res:Response) => {
-  res.send({ message: `Hola ${req.params.name}` })
-})
-/*
-“data”: {
-“message”: “Goodbye, world”
+// // Create Express APP
+// const app: Express = express()
+// const port: string | number = process.env.PORT || 8000
 
-}
-*/
+// // Define the first Route of APP
+// app.get('/', (req:Request, res:Response) => {
+//   // Send Hello World
+//   res.send('Welcome to API Restfull: APP Express + Nodemon + Jest + TS + Swagger + Mongoose')
+// })
 
-/* cambie brwoser por node en .eslintrc */
+// app.get('/hello', (req:Request, res:Response) => {
+//   // Send Hello World
+//   res.send('Welcome to GET Route: !Helloo2qwrfqwtfgqwtfg')
+// })
 
-// app.get('/data', (req:Request, res:Response) => {
+// // Execute APP and Listen Requests to PORT
+// app.listen(port, () => {
+//   console.log(`EXPRESS SERVER: Running at http://localhost:${port}`)
+// })
 
-//     // res.sendStatus(200);
-//     // res.send('purbeadfa');
+// app.get('/prueba1', (req:Request, res:Response) => {
+//   res.send({ message: 'Goodbye, world' })
+// })
 
-//     return{ message: 'Goodbye, world' };
-//     res.status(200);
-//     // res.status(200).json({ message: 'Goodbye, world' })
-
-// });
+// app.get('/prueba2/:name', (req:Request, res:Response) => {
+//   res.send({ message: `Hola ${req.params.name}` })
+// })
