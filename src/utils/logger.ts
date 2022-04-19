@@ -13,3 +13,8 @@ export const LogWarning = (message: string) => {
 export const LogError = (message: string) => {
   console.log(`Error: ${message}`)
 }
+
+/* Ejercicio 2 */
+export const LogInfoMessDate = (message: string, fecha: Date) => {
+  console.log(`Info: ${message} + ${fecha}`)
+}
