@@ -88,3 +88,31 @@ Que orden tiene que seguir el proyecto.
 Recuerda crear un type específico para esta respuesta dentro de la carpeta de controllers
 
 Recuerda crear Controller y Router oportuno
+
+
+ # SESIÓN 3 
+## Datos y ejercicios
+
+
+## Crear un README.md explicando:
+-Las dependencias que has instalado y para qué sirve cada una de ellas
+-Los scripts de NPM que hayas creado y para qué sirven cada uno de ellos;
+## /************ Video 2 ************/
+ -_- npm i -D ts-loader --> 
+  -_- npm i -D @types/swagger-jsdoc @types/swagger-ui-express --> podemos acceder a todas las peticiones de los endpoints directamente
+    -_- npm i --save swagger-jsdoc swagger-ui-express --> se generan las depencias para los documentos basicos swagger
+        -_- npm i tsoa --> sirve para usar swagger con typescript y comentar el codigo
+
+
+
+
+
+
+
+
+
+
+## -_- Al subir el archivo a git seria tal que asi:
+ -_- git add .
+ -_- git commit -m ""
+ -_- git push
