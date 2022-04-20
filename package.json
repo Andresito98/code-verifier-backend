@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Backend Node + Express + TS + Swagger",
   "main": "index.js",
-  "scripts": {            
-    "dev": "concurrently \"npx tsc --watch \" \"nodemon -q dist/index.js \" ",
+  "scripts": {
+    "swagger": "tsoa spec",
+    "dev": "concurrently \"npx tsc --watch \" \"npm run swagger\" \"nodemon -q dist/index.js \" ",
     "test": "jest",
     "serve:coverage": "npm run test && cd coverage/lcov-reportnpx && npx serve",
     "build": "npx webpack --mode development",
@@ -33,7 +34,10 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "helmet": "^5.0.2",
-    "mongoose": "^6.3.0"
+    "mongoose": "^6.3.0",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.3.0",
+    "tsoa": "^3.14.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

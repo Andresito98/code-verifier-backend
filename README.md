@@ -92,7 +92,9 @@ Recuerda crear Controller y Router oportuno
 
  # SESIÓN 3 
 ## Datos y ejercicios
+al hacer npm run swagger se actu
 
+Aqui lo que he hecho fue hacer las instalaciones y añadir datos a la clase GoodbyeController.ts
 
 ## Crear un README.md explicando:
 -Las dependencias que has instalado y para qué sirve cada una de ellas
@@ -100,8 +102,43 @@ Recuerda crear Controller y Router oportuno
 ## /************ Video 2 ************/
  -_- npm i -D ts-loader --> 
   -_- npm i -D @types/swagger-jsdoc @types/swagger-ui-express --> podemos acceder a todas las peticiones de los endpoints directamente
+  
     -_- npm i --save swagger-jsdoc swagger-ui-express --> se generan las depencias para los documentos basicos swagger
         -_- npm i tsoa --> sirve para usar swagger con typescript y comentar el codigo
+
+-Replicar la creación de base de datos en MongoDB
+* Crear una colección llamada Katas (retos de programación)
+  * Cada documento deberá tener:
+  * Name
+  * Description
+  * Level (nivel de dificultad numérico)
+  * User (id asociado al usuario que lo ha creado)
+  * Date (Fecha de creación del reto)
+  * Valoration (sobre 5, valor numérico)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
