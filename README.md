@@ -186,9 +186,11 @@ db.Contacts.aggregate([
 Ok
 
 
-
-
-
+ # SESIÓN 5
+## Datos y ejercicios
+1 - Lo primero es el "entity" luego el "orm" luego el "controller" y despues las "routes" y despues el "index.ts de la carpeta routes"
+2 - (Primero la inteface, añadimos la funcion get lo que sea, despues hacemos el user.orm)esos 2 campos da igual el orden y despues el controlador
+Recuerda " El orm es el encargado de gestionar la base de datos, el controller lo ejecuta y el router lo enruta
 
 
 
