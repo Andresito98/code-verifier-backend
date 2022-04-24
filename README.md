@@ -192,8 +192,26 @@ Ok
 2 - (Primero la inteface, añadimos la funcion get lo que sea, despues hacemos el user.orm)esos 2 campos da igual el orden y despues el controlador
 Recuerda " El orm es el encargado de gestionar la base de datos, el controller lo ejecuta y el router lo enruta
 
+### EJERCICIO :
+He creado -->
+- interfaces --> index.ts --> "IKatas"
+- KatasController.ts
+- Katas.orm.ts
+- Katas.entity.ts
+- KatasRouter.ts
+- routes --> index.ts --> server.use() "katasRouter"
 
+Aqui consiste en hacer lo mismo que en el video.
+Los endpoints y una serie de filtros.
+-__- use codeverification --> para usar el db.katas
 
+* Crear un nuevo modelo y endpoints para gestionar peticiones CRUD para la colección de Katas. Además:
+  * Debes poder filtrar las Katas disponibles por nivel de dificultad --> db.katas.find({"level"})
+  * Debes poder obtener las 5 Katas más recientes --> db.katas.find().limit(5)
+  * Debes poder listar las Katas ordenadas de mejor valoradas a menos valoradas
+  * Debes poder valorar una Kata con una nueva nota y debe almacenarse la media
+    * Por lo que el modelo de Kata deberá tener un valor que será número de valoraciones de usuarios, para así obtener la media
+  * Debes poder encontrar las Katas ordenadas por intentos
 
 
 
