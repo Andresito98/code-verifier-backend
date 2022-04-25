@@ -214,6 +214,85 @@ Los endpoints y una serie de filtros.
   * Debes poder encontrar las Katas ordenadas por intentos
 
 
+# SESIÓN 6
+## Datos y ejercicios
+
+ * -_- --> npm i --save bcrypt jsonwebtoken bcryptjs
+   * -_- --> npm i -D @types/bcrypt
+    * -_- --> npm i -D @types/bcryptjs
+      * -_- --> npm i -D @types/jsonwebtoken
+
+Realizo carpeta interfaces y "IUser.interface.ts" y tambien pusimos en UserRouter y UsersControllers.ts los status.
+Despues he hecho la carpeta middlewates y su archivo "veridyToken..ts"
+Y deswpues en el User.orm.ts hacer los metodos login y register (prediseño)
+Despues en UserRouter.ts hacer la ruta --> ('/auth/register') despues el index.ts del controller el "IAuthController"
+--> hacer el interfaces --> IAuth.interface.ts ;
+--> hacer el orm --> Auth.orm.ts
+--> hacer routes --> AuthRouter.ts
+--> hacer controller --> AuthController.ts --> los metodos login y register
+--> añadir la ruta en index.ts de la carpeta routes
+
+## Ejercicio 6
+* Instala todas las dependencias y reorganiza correctamente el proyecto
+* Crea los controladores, ORMs y Rutas necesarias del proyecto
+* Asegúrate de entender cómo vamos a autenticar los usuarios
+* Prueba las rutas de registro de usuarios y verifica que se guarda la contraseña cifrada con Bcryp
+
+
+# SESIÓN 7
+## Datos y ejercicios
+
+--> Los MiddleWare son funciones que se va a ejecutar antes de ejecutar las demas, es una ejecucion primaria
+
+ * -_- --> npm i body-parser
+  * -_- --> npm i -D @types/body-parser
+
+
+* Asegúrate de entender qué es un middleware
+* Prueba las rutas de registro de usuarios y verifica que se guarda la contraseña cifrada con Bcrypt
+* Prueba la ruta de login y obtén el JWT del usuario
+* Usa el JWT para acceder a las rutas protegidas de la api
+* Usa el Middleware de JWT para proteger todas las rutas relativas al modelo de Katas que has hecho en ejercicios anteriores
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -230,3 +309,6 @@ Los endpoints y una serie de filtros.
  -_- git add .
  -_- git commit -m ""
  -_- git push
+
+ ## Consejos
+ -_- Los tipos de datos como spring / numbre etc se ponen en minusculas

@@ -1,6 +1,12 @@
 import { userEntity } from '../entities/User.entity'
 // import { LogError } from '@/utils/logger'
 import { LogError } from '../../utils/logger'
+import { IUser } from '../interfaces/IUser.interface'
+import { IAuth } from '../interfaces/IAuth.interface'
+// BRYPT for passwords
+import bcrypt from 'bcrypt'
+// JWT
+import jwt from 'jsonwebtoken'
 
 // CRUD
 
@@ -62,4 +68,55 @@ export const updateUserById = async (id: String, user: any): Promise<any | undef
   } catch (error) {
     LogError(`[ORM ERROR]: Updating Users ${id}: ${error}`)
   }
+}
+
+// Register User
+export const registerUser = async (user: IUser): Promise<any | undefined> => {
+  try {
+    const userModel = userEntity()
+    // Create / User
+    return await userModel.create(user)
+  } catch (error) {
+    LogError(`[ORM ERROR]: Creatin Users : ${error}`)
+  }
+}
+
+// Login User
+export const loginUser = async (auth: IAuth): Promise<any | undefined> => {
+  try {
+    const userModel = userEntity()
+
+    // Find User by email
+    userModel.findOne({ email: auth.email }, (err: any, user: IUser) => {
+      if (err) {
+        // TODO: return ERROR --> (500)
+      }
+
+      if (!user) {
+        // TODO: return ERROR --> (404)
+      }
+
+      // Use bcrypt to compare pass
+      const validPassword = bcrypt.compareSync(auth.password, user.password)
+
+      if (!validPassword) {
+        // TODO: not authorised --> (401)
+      }
+
+      // Create JWT
+      // TODO: secret must be in .env
+      const token = jwt.sign({ email: user.email }, 'MYSECRETWORD', {
+        expiresIn: '2h'
+      })
+
+      return token
+    })
+  } catch (error) {
+    LogError(`[ORM ERROR]: Getting Users By ID: ${error}`)
+  }
+}
+
+// Logout User
+export const logoutUser = async (): Promise<any | undefined> => {
+
 }

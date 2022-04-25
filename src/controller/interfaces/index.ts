@@ -1,3 +1,4 @@
+import { IUser } from '../../doamin/interfaces/IUser.interface'
 import { BasicResponse, ResponseMDate } from '../types'
 
 export interface IHelloController {
@@ -29,4 +30,11 @@ export interface IKatas{
     createKatas(katas: any): Promise<any>
     // Update Katas
     updateKatas(id: String, katas: any): Promise<any>
+}
+
+export interface IAuthController {
+    // regisster new User
+    registerUser(user: IUser): Promise<any>
+    // login user
+    loginUser(auth: any): Promise<any>
 }
